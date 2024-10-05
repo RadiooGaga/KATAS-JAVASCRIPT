@@ -12,22 +12,25 @@ const movies = [
     { name: "Terminator", durationInMinutes: 140 },//media
   ];
 
-const shortMovie = [];
-const mediumLengthMovie = [];
-const longMovie = [];
 
-for (const movie of movies){
-  if (movie.durationInMinutes > 200){
-    longMovie.push(movie);
-  } else if (movie.durationInMinutes > 100) {
-      mediumLengthMovie.push(movie);
-    } else {
-    shortMovie.push(movie);
+  const shortFilm = [];
+  const mediumFilm = [];
+  const featureFilm = [];
+  
+  for (const movie of movies) {
+    const duration = movie.durationInMinutes; // Acceder a la duración
+  
+    if (duration < 100) {
+        shortFilm.push(movie);
+    } else if (duration >= 100 && duration < 200) {
+        mediumFilm.push(movie);
+    } else if (duration >= 200) {
+        featureFilm.push(movie);
+    }
+  
   }
-}
-
-
-console.log("List of short movies",shortMovie);
-console.log("List of medium length movies",mediumLengthMovie);
-console.log("List of long movies",longMovie);
+  
+  console.log("Short Films:", shortFilm);
+  console.log("Medium Films:", mediumFilm);
+  console.log("Feature Films:", featureFilm);
 

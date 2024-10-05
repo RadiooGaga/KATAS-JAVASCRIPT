@@ -1,7 +1,7 @@
-//Usa un bucle y dos condiciones para imprimir por consola el nombre de los usuarios 
-//que sean menor de edad precedidos del texto."Usuarios menores de edad:" y otro que 
-//imprima a los usuarios mayores de edad, precedido del texto "Usuarios mayores de 
-//edad:".
+/* Usa un bucle y dos condiciones para imprimir por consola el nombre de los usuarios 
+que sean menor de edad precedidos del texto."Usuarios menores de edad:" y otro que 
+imprima a los usuarios mayores de edad, precedido del texto "Usuarios mayores de 
+edad:".*/
 
 const users = [
   { name: "Tony", years: 43 },
@@ -11,17 +11,17 @@ const users = [
   { name: "Khamala", years: 16 },
 ];
 
-const olderUsers = [];
-const youngerUsers = [];
+const olderThan18Users = [];
+const youngerThan18Users = [];
 
-for (let i = 0; i < users.length; i++){
-    const user = users[i];
-    if (user.years >= 18){
-      olderUsers.push(user);
-    } else {
-      youngerUsers.push(user);
-    }
+for (const user of users) {
+  if (user.years < 18) {
+    youngerThan18Users.push(user)
+    console.log("Usuarios menores de edad", user.name)
+  } else {
+    olderThan18Users.push(user)
+    console.log("Usuarios mayores de edad", user.name)
+  }
 }
 
-console.log("Usuarios mayores de edad",olderUsers)
-console.log("Usuarios menores de edad", youngerUsers)
+console.log(olderThan18Users, youngerThan18Users)

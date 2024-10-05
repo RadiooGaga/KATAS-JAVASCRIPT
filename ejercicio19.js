@@ -1,6 +1,6 @@
-//Mixed For e includes: Usa un bucle for para recorrer todos los juguetes 
-//y elimina los que incluyan la palabra gato. Recuerda que puedes usar la 
-//función .includes() para comprobarlo. Puedes usar este array:
+/* Mixed For e includes: Usa un bucle for para recorrer todos los juguetes 
+y elimina los que incluyan la palabra gato. Recuerda que puedes usar la función 
+.includes() para comprobarlo. Puedes usar este array:*/
 
 const toys = [
     {id: 5, name: 'Buzz MyYear'}, 
@@ -20,3 +20,19 @@ for (let i = 0; i < toys.length; i++){
     
 }
 console.log(toys);
+
+
+//otra forma de hacerlo
+
+const toysWithoutCats = [];
+
+for (const toy of toys) {
+    if (!toy.name.includes('gato')) {
+       toysWithoutCats.push(toy) 
+    }
+}
+
+console.log(toysWithoutCats)
+
+// Ambas formas resuelven, pero la de abajo no es útil si no quieres un nuevo array.
+// La primera, no genera nuevo array. Modifica el que hay.
